@@ -47,3 +47,16 @@ const listaAmigos = () => {
     lista.appendChild(li);
   });
 };
+
+//funcion para agregar un amigo a la lista
+const agregarAmigo = () => {
+  //obtenemos el input
+  const inputElement = getElement("amigo");
+  //validamos el input
+  let input = inputValide(inputElement.value);
+  if (!input) return;
+  //recorremos el arreglo de amigos
+  friends.push(input);
+  inputElement.value = "";
+  clearAndRenderList("listaAmigos", friends);
+};
