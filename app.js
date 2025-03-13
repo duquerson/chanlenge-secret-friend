@@ -60,3 +60,15 @@ const agregarAmigo = () => {
   inputElement.value = "";
   clearAndRenderList("listaAmigos", friends);
 };
+
+//funcion para sortear un amigo
+
+const sortearAmigo = () => {
+  //validamos que el arreglo de amigos tenga al menos un amigo
+  if (!friends.length) return alert("Debes ingresar al menos un amigo");
+  //obteniendo el index de un amigo aleatorio
+  let index = Math.floor(Math.random() * friends.length);
+  //limpiamos y mostramos amigo sorteado
+  clearAndRenderList("listaAmigos", []);
+  clearAndRenderList("resultado", [friends[index]]);
+};
