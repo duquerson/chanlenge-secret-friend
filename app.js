@@ -29,3 +29,21 @@ const clearAndRenderList = (listName, friends) => {
     });
   }
 };
+
+//funcion para listar amigos
+
+const listaAmigos = () => {
+  //obtenemos la lista de amigos
+  let lista = getElement("listaAmigos");
+  //limpiamos la lista
+  lista.innerHTML = "";
+  //recorro el arreglo de amigos
+  friends.forEach((friend) => {
+    //creamos un elemento li para cada amigo
+    let li = document.createElement("li");
+    //le agregamos el nombre del amigo
+    li.textContent = friend;
+    //lo agregamos a la lista
+    lista.appendChild(li);
+  });
+};
