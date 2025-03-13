@@ -73,8 +73,6 @@ const sortearAmigo = () => {
   clearAndRenderList("resultado", [friends[index]]);
 };
 
-//funcion para evento enter
-
 //funcion para manejar el evento de enter
 const eventEnter = (event) => {
   if (event.key === "Enter") agregarAmigo();
