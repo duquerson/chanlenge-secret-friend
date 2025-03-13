@@ -11,3 +11,21 @@ const inputValide = (input) => {
   if (!cleanInput) alert("Debes ingresar un nombre");
   return cleanInput;
 };
+
+//funcion para limpiar y renderizar elementos de la lista
+
+const clearAndRenderList = (listName, friends) => {
+  //obtenemos el id de la lista
+  const list = getElement(listName);
+  //limpiamos la lista
+  list.innerHTML = "";
+  //recorremos el arreglo de items
+  if (friends.length > 0) {
+    friends.forEach((friend) => {
+      let li = document.createElement("li");
+      li.textContent = friend;
+      //agregamos el elemento li a la lista
+      list.append(li);
+    });
+  }
+};
